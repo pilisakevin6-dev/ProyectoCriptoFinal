@@ -24,10 +24,10 @@ public class EnviarComentarioServlet
                 request.getParameter("comentario");
 
         final String correo =
-                "TU_CORREO@gmail.com";
+                "pilisabrayan2009@gmail.com";
 
         final String password =
-                "TU_CLAVE_APP";
+                "ixguiodeynqetxcq";
 
         Properties props =
                 new Properties();
@@ -90,7 +90,7 @@ public class EnviarComentarioServlet
             Transport.send(message);
 
             response.sendRedirect(
-                    "principal.jsp");
+                    "simulador.jsp?mensaje=enviado");
 
         } catch (MessagingException e) {
 

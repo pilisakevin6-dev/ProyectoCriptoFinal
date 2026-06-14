@@ -1,5 +1,40 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Título de tu Página</title>
 
+    <style>
+        #video-fondo {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+        .overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+    <video autoplay muted loop id="video-fondo">
+        <source src="fondo.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+
+    <div class="tu-contenido">
+        <h1>Bienvenido</h1>
+        </div>
+
+</body>
+</html>
 <%
     // Aseguramos que el nombre siempre tenga un valor
     String nombre = (String) session.getAttribute("usuario");
@@ -805,6 +840,27 @@ ________________________________________
     </div>
 </div>
 <style>
+/* --- CONFIGURACIÓN DEL VIDEO --- */
+#video-fondo {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    z-index: -2; /* Envía el video al fondo */
+}
+
+/* Capa oscura sobre el video para que el texto resalte */
+.overlay {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Oscurece al 60% */
+    z-index: -1; /* Capa intermedia */
+}
 /* CAJA DE COMENTARIOS */
 .comentarios-box{
     margin-top: 40px;
